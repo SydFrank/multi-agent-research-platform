@@ -1,0 +1,29 @@
+# Normalize line endings: LF in the repository, native in the working tree.
+# Keeps diffs clean across Windows/Linux and matches the Linux containers we build.
+* text=auto eol=lf
+
+# Shell scripts must stay LF even on Windows checkouts
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.dockerfile text eol=lf
+
+# Windows-only scripts keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files: never touch
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.parquet binary
+*.woff binary
+*.woff2 binary
+
+# Lock files: mark as generated so diffs collapse in review
+uv.lock linguist-generated=true
+package-lock.json linguist-generated=true

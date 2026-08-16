@@ -1,0 +1,106 @@
+# ============================================
+# Secrets and credentials — never commit
+# ============================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials.json
+secrets/
+
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.hypothesis/
+
+# ============================================
+# Node / frontend
+# ============================================
+node_modules/
+frontend/dist/
+frontend/.vite/
+.pnpm-store/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+
+# ============================================
+# Data and runtime artifacts
+# ============================================
+data/
+pgdata/
+redisdata/
+minio_data/
+prometheus_data/
+grafana_data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Raw data stays out of the repo; only small samples are tracked
+!data/samples/
+!data/samples/**
+
+# ============================================
+# Evaluation artifacts
+# ============================================
+# Per-run outputs are large and change constantly — not tracked
+harness/runs/
+harness/.cache/
+# NOTE: harness/evalset/ and harness/baselines/ MUST be committed — do not ignore them
+
+# ============================================
+# Logs and traces
+# ============================================
+*.log
+logs/
+traces/
+*.trace.json
+
+# ============================================
+# Private notes — kept outside the repo at ../AI_Agent_Pro_private/
+# Listed here as a second layer of protection
+# ============================================
+docs/INTERVIEW_GUIDE.md
+docs/TECH_DESIGN.md
+private/
+
+# ============================================
+# IDE / editors / OS
+# ============================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# Misc
+# ============================================
+*.bak
+*.tmp
+.cache/
